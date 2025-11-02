@@ -2,7 +2,7 @@ from enum import Enum
 from fastapi import FastAPI
 import datetime
 
-app = FastAPI()
+app = FastAPI(title="Lesson 1 - Path & Query Parameters", version="1.0.0", description="An example FastAPI application demonstrating path and query parameters.")
 
 # To run the application, use the command: `uvicorn main:app --reload`
 
@@ -16,7 +16,7 @@ class ModelName(str, Enum):
 
 # Define a route that uses the ModelName enumeration as a path parameter
 
-@app.get("/models/{model_name}")
+@app.get("/models/{model_name}", tags=["Note the Enum usage, path parameter and conditional logic"])
 async def get_model(model_name: ModelName):
     if model_name == ModelName.alexnet:
         return {"model_name": model_name, "message": "Getting the hands on AlexNet"}
@@ -38,7 +38,7 @@ async def get_model(model_name: ModelName):
 
 
 
-@app.get("/age/{age}")
+@app.get("/age/{age}", tags=["Note the query parameters with default values and optional parameters"])
 async def calculate_age(age: int, years: int = 50, desired: int | None = None, activate: bool = True):
     future_age = age + years
     current_year = datetime.datetime.now().year

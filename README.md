@@ -10,14 +10,15 @@
 1. Clone this repository and install the required packages:
     `pip install -r requirements.txt`
 
+2. Run the application using Uvicorn:
 
+   `uvicorn lessons.lesson_1.main:app --reload`
 
-2. Save this code in a file named `main.py`
+   `uvicorn <module_name>:<app_instance_name> --reload`
 
-3. Run the application using Uvicorn:
-   `uvicorn main:app --reload`  or  `uvicorn main:app --host 0.0.0.0 --port 8000 --reload`
+   `uvicorn lessons.lesson_1.main:app --host 0.0.0.0 --port 8000 --reload`
 
-4. Access the application in your browser at:
+3. Access the application in your browser at:
    `http://localhost:8000`
 
 
