@@ -2,7 +2,7 @@ from typing import Annotated
 from fastapi import FastAPI, Query
 
 app = FastAPI(
-    title="Lesson 5 - Query Parameter Validations",
+    title="Lesson 6 - Multiple Query Parameters with Validations",
     version="1.0.0",
     description="An example FastAPI application demonstrating multiple query parameters with uniform validation using FastAPI's Query class."
     )
