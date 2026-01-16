@@ -20,9 +20,9 @@ class Movies(BaseModel):
 async def update_movie(
     movie_id: int,
     movie: Movies,
-    query: str | None = None
+    q: str | None = None
 ):
     result = {"movie_id": movie_id, "movie": movie}
-    if query:
-        result.update({"query": query})
+    if q:
+        result.update({"q": q})
     return result

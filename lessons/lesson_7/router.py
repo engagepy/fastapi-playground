@@ -15,7 +15,8 @@ async def bike_repair(
     q: Annotated[list[str] | None, 
                  Query(
                      title= "Observations on bike", 
-                     max_length=20, alias="bike-damage")] = None
+                     max_length=20, 
+                     alias="bike-damage")] = None
                      ): # just list use is possible, no str
     results = {"items": [{"number": "HR01X"}, {"service_needs": "Oil Change, Tire Rotation"}]}
     if q:
