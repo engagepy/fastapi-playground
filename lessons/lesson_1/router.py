@@ -32,18 +32,11 @@ async def get_model(model_name: ModelName):
 )
 async def calculate_age(
     age: int,
-    years: int = 50,
-    desired: int | None = None,
+    desired_age: int,
     activate: bool = True
 ):
+    years_needed = desired_age - age
     current_year = datetime.now().year
-    future_age = age + years
-    future_year = current_year + years
+    future_year = current_year + years_needed if activate else current_year    
 
-    if desired is not None and activate:
-        years_needed = desired - age
-        if years_needed > 0:
-            future_age = desired
-            future_year = current_year + years_needed
-
-    return {"current_age": age, "future_age": future_age, "year": future_year}
+    return {"current_year": current_year, "future_age": desired_age, "year": future_year}

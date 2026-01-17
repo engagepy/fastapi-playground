@@ -44,8 +44,8 @@ def check_prefix(value: list[str]) -> list[str]:
 
 @router.get(
     "/bike_service/",
-    summary="Query or path parameter validation using AfterValidator",
-    description="Demonstrates query or path parameter validation using AfterValidator from Pydantic."
+    summary="Query validation using AfterValidator",
+    description="Demonstrates query parameter validation using AfterValidator from Pydantic."
 )
 async def bike_repair(
     q: Annotated[list[str] | None, 
