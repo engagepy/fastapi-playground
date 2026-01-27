@@ -14,6 +14,7 @@ class MovieRequest(BaseModel):
     title: str = Field(..., title="Movie Title", max_length=100)
     director: str = Field(..., title="Director Name", max_length=50)
     year: int = Field(..., title="Release Year", ge=1900, le=2100)
+    filter: Literal["popular", "recent", "classic"] = Field(..., title="Movie Filter")
 
 @router.get(
     "/get_movie/",
