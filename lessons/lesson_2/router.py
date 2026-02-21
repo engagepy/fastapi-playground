@@ -22,12 +22,12 @@ class ContactGroup(str, Enum):
     travel = "travel"
 
 @router.get(
-    "/contact/{details}",
+    "/contact/{search_key}",
     summary="Multiple path parameters using Enum",
     description="Demonstrates the use of Enum for path parameters together with optional query parameters."
 )
 async def add_contact(
-    details: ContactParameter,
+    search_key: ContactParameter,
     firstname: str,
     lastname: str,
     number: int,

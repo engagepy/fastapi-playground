@@ -25,6 +25,6 @@ async def create_user_role(
 ):
     return {
         "role_id": role_id,
-        "user_role": user_role.dict()
+        "user_role": user_role.model_dump()
     }
 
