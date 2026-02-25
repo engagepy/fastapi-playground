@@ -32,4 +32,3 @@ async def create_contact_card(
         "card_id": card_id,
         "contact_card": contact_card.model_dump()
     }   
-
