@@ -21,7 +21,7 @@ class User_Profile(BaseModel):
 
 @router.post(
     "/profile/{user_id}/image",
-    summary="Observe special Pydantic types and additional validation via Field() in nested models",
+    summary="Observe attributes with lists of submodels and special validation types like HttpUrl",
     description="Demonstrates how to use Body() to accept a Pydantic model with nested models in the request body while also accepting path parameters for adding an image to a user profile",  
 )
 async def add_profile_image(
