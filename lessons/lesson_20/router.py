@@ -1,5 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Body
 from pydantic import BaseModel, HttpUrl
+from typing import Annotated
 
 router = APIRouter(
     prefix="/lesson-20",
@@ -23,7 +24,7 @@ async def upload_multiple_images(images: list[ImageRequest]):
     summary="Update Index Weights Dict with int keys and float values",
     description="Endpoint to update index weights where the keys are integers and the values are floats."
 )
-async def update_index_weights(weights: dict[int, float]):
+async def update_index_weights(weights: Annotated[dict[str, float], Body(embed=True)]):
     return weights
 
 
