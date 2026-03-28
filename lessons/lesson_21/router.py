@@ -13,7 +13,7 @@ class grocery_basket(BaseModel):
     store_url: HttpUrl
 
     model_config = {
-        "schema_extra": {
+        "json_schema_extra": {
             "example": {
                 "items": ["milk", "bread", "eggs"],
                 "total_price": 12.50,
