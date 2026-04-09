@@ -25,7 +25,7 @@ class grocery_basket(BaseModel):
 @router.post(
     "/grocery-basket",
     summary="Create a Grocery Basket",
-    description="Endpoint to create a grocery basket with items, total price, and store URL."
+    description="Using model_config to add an example to the OpenAPI docs"
 )
 
 async def create_grocery_basket(basket: grocery_basket):
