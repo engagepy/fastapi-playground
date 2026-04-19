@@ -15,4 +15,3 @@ router = APIRouter(
 )
 async def read_items(user_agent: Annotated[str, Header()] = None):
     return {"User-Agent": user_agent}
-
