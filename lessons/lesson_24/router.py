@@ -9,8 +9,8 @@ router = APIRouter(
 
 @router.get(
     "/items", 
-    summary="Get items with query parameters", 
-    description="Observe how to use query parameters in the OpenAPI docs"
+    summary="Use fastapi built in Cookie parameters", 
+    description="Observe how to use cookie parameters in the OpenAPI docs"
     )
 async def read_items(ads_id: Annotated[str, Cookie()] = None):
     return {"ads_id": ads_id}
