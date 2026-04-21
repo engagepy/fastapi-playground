@@ -9,6 +9,8 @@ router = APIRouter(
 )
 
 class Cookies(BaseModel):
+    model_config = {"extra": "forbid"}
+
     ads_id: str | None = None
     fatebook: str | None = None
     googla: str | None = None
@@ -17,7 +19,7 @@ class Cookies(BaseModel):
 @router.get(
     "/items",
     summary="Get items with Cookie parameters",
-    description="Observe how to use Cookie parameters in the OpenAPI docs"
+    description="Observe how to use Cookie parameters and forbid extra cookies"
 )
 async def read_items(cookies: Annotated[Cookies, Cookie()]):
     return cookies.dict()
